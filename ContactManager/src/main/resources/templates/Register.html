@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row d-flex justify-content-center mt-2">
+				<div class="col-md-6">
+					<div class="card">
+					
+						<div class="alerts p-1">
+							<!-- alert messages starts -->
+							<div class="alert alert-success" th:if="${session.successMsg}">
+								<p class="text-center">[[${session.successMsg}]]</p>
+								<th:block th:text="${@IUserServiceImpl.removeSessionMessage()}"></th:block>
+							</div>
+							<div class="alert alert-danger" th:if="${session.failMsg}">
+								<p class="text-center">[[${session.failMsg}]]</p>
+								<th:block th:text="${@IUserServiceImpl.removeSessionMessage()}"></th:block>
+							</div>
+							<!-- alert messages ends -->
+						</div>
+						
+						<div class="card-head d-flex flex-column align-items-center">
+							<img th:src="@{/images/registerlogo.png}" alt="" width="65px" height="70px"/>
+							<h3 class="text-center fs-2 fw-bold">Register Here !!</h3>
+						</div>
+						<div class="card-body">
+							<form th:action="@{/do_register}" method="post">
+								<div class="from-group mb-3">
+									<label for="name">Your Name</label>
+									<input type="text" placeholder="Enter here" name="name" id="name" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="from-group mb-3">
+									<label for="email">Your Email</label>
+									<input type="email" placeholder="Enter here" name="email" id="email" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="from-group mb-3">
+									<label for="password">Your Password</label>
+									<input type="password" placeholder="Enter here" name="password" id="password" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="form-group mb-1">
+									<textarea rows="6" cols="" placeholder="Enter something yourself" name="about" id="about" class="form-control" autocapitalize="off" required></textarea>
+								</div>
+								<div class="form-group mb-2 text-center">
+									<input type="checkbox" name="agreement" class="form-check-input" id="agreement"/>
+									<label for="agreement">Accept terms and conditions</label>
+								</div>
+								<div class="form-group d-flex justify-content-center">
+									<input type="submit" value="Submit" class="btn btn-info me-2"/>
+									<input type="reset" value="Reset" class="btn btn-warning"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

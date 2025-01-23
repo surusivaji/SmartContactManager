@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="conatiner" style="overflow-x: hidden;">
+			<div class="row d-flex justify-content-center align-items-center" style="height:80vh">
+				<div class="col-md-8">
+					<div class="card">
+						<div class="card-head p-2">
+							<h2 class="text-center fs-2 fw-bolder">About</h2>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-8" style="text-align: justify">
+									<p>
+										Smart Contact Manager is a modern, feature-rich application designed to make managing contacts simple and efficient. 
+										Built using Spring Boot, Spring MVC, Spring Data JPA, HTML, CSS, JavaScript, Bootstrap, and a MySQL database, this application offers a seamless experience for users. 
+										After successful user registration, all details are securely stored in the database, allowing users to log in and access the system with ease.
+									</p>	
+									<p>
+										Once logged in, users can perform various operations such as adding new contacts, viewing all saved contacts, viewing detailed information about a 
+										specific contact, editing or deleting contact details, and managing their profile. 
+										Additionally, the application provides options to view and update user profiles and change passwords, ensuring both usability and security.
+										 Smart Contact Manager is the perfect tool for individuals or organizations to efficiently manage and organize contact information.
+									</p>
+								</div>
+								<div class="col-md-4">
+									<img th:src="@{/images/aboutus.jpg}" class="img-fluid" alt="" height="300px" width="300px" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

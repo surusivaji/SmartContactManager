@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row d-flex justify-content-center align-items-center" style="height: 80vh">
+				<div class="col-md-6">
+					<div class="card">
+						
+						<div class="alerts p-2">
+							<!-- alert messages starts -->
+							<div class="alert alert-warning" th:if="${session.logout}">
+								<p class="text-center">[[${session.logout}]]</p>
+								<th:block th:text="${@IUserServiceImpl.removeSessionMessage()}"></th:block>
+							</div>
+							<div class="alert alert-danger" th:if="${session.failMsg}">
+								<p class="text-center">[[${session.failMsg}]]</p>
+								<th:block th:text="${@IUserServiceImpl.removeSessionMessage()}"></th:block>
+							</div>
+							<!-- alert messages ends -->
+						</div>
+					
+						<div class="card-head p-2 d-flex flex-column align-items-center">
+							<img th:src="@{/images/loginlogo.png}" alt="" width="65px" height="70px"/>
+							<h3 class="text-center fs-2 fw-bold">Login Here !!</h3>
+						</div>
+						<div class="card-body">
+							<form th:action="@{/loginInfo}" method="post">
+								<div class="from-group mb-3">
+									<label for="email">Your Username</label>
+									<input type="email" name="email" id="email" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="from-group mb-3">
+									<label for="password">Your Password</label>
+									<input type="password" name="password" th:value="*{password}" id="password" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="form-group mb-2 d-flex justify-content-center">
+									<input type="submit" value="Login" class="btn btn-info form-control"/>
+								</div>
+								<div class="text-center">
+									<p>don't have any account? <a th:href="@{/register}">create one</a></p>
+								</div>
+							</form>
+						</diV>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
