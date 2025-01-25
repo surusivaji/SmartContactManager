@@ -8,7 +8,10 @@
 
 <h2>📜 Overview</h2>
 <p>
-  The <strong>Smart Contact Manager</strong> is a comprehensive application that allows users to manage their personal contacts effectively. Once registered, users can log in to access a suite of features to manage and secure their contact information.
+  The <strong>Smart Contact Manager</strong> is designed to simplify the management of personal and professional contacts. 
+  With the growing need for secure and structured storage of contact information, this project ensures users can efficiently organize their contacts, maintain security, 
+  and access them whenever required. It combines powerful backend technology with an intuitive frontend, making it suitable for both personal and business purposes. 
+  This application eliminates the risks of losing contacts stored in physical or decentralized mediums while providing advanced features like search, updates, and user-specific dashboards.
 </p>
 
 <hr>
@@ -17,7 +20,7 @@
 
 <h3>🔑 User Authentication</h3>
 <ul>
-  <li><strong>Registration:</strong> Secure user registration with data stored in the database.</li>
+  <li><strong>Registration:</strong> Secure user registration with encrypted storage of user credentials.</li>
   <li><strong>Login:</strong> User authentication to access application features.</li>
 </ul>
 
@@ -84,12 +87,46 @@
 <hr>
 
 <h2>📸 Screenshots</h2>
+<p>Below are sample screenshots showcasing the Smart Contact Manager Application:</p>
 
-<h3>🖼️ Dashboard</h3>
-<img src="https://via.placeholder.com/800x400" alt="Dashboard Screenshot">
+<h4>1. Index</h4>
+<img src="index.png" alt="Index Page" width="80%">
 
-<h3>📇 Contact Management</h3>
-<img src="https://via.placeholder.com/800x400" alt="Contact Management Screenshot">
+<h4>2. Registration</h4>
+<img src="register.png" alt="User Registration Page" width="80%">
+
+<h4>3. Login</h4>
+<img src="login.png" alt="User Login Page" width="80%">
+
+<h4>4. About</h4>
+<img src="about.png" alt="About Page" width="80%">
+
+<h4>5. Home</h4>
+<img src="userhome.png" alt="Home Page" width="80%">
+
+<h4>6. Add Contact</h4>
+<img src="addcontact.png" alt="Add Contact Page" width="80%">
+
+<h4>7. View Contact</h4>
+<img src="showcontact.png" alt="Show Contact Page" width="80%">
+
+<h4>8. View All Contacts</h4>
+<img src="viewcontacts.png" alt="View All Contacts Page" width="80%">
+
+<h4>9. Edit Contact</h4>
+<img src="updatecontact.png" alt="Update Contact Page" width="80%">
+
+<h4>10. Delete Contact</h4>
+<img src="deletecontact.png" alt="Delete Contact Page" width="80%">
+
+<h4>11. Profile</h4>
+<img src="viewprofile.png" alt="Profile Page" width="80%">
+
+<h4>12. Settings</h4>
+<img src="settings.png" alt="Settings Page" width="80%">
+
+<h4>13. Logout</h4>
+<img src="logout.png" alt="Logout Page" width="80%">
 
 <hr>
 
@@ -137,5 +174,3 @@ smart-contact-manager/
 <hr>
 
 <h3 align="center">🎉 Enjoy using Smart Contact Manager! 🎉</h3>
-
-
