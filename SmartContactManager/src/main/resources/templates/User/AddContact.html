@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="card-head p-2">
+			
+				<!-- ALERT MESSAGE STARTS -->
+				<div class="alert alert-success text-center" th:if="${session.successMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.successMsg}]] 😎😎😎</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-danger" th:if="${session.failMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.failMsg}]] 😡😡😡</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-warning" th:if="${session.warningMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.warningMsg}]] ⚠️⚠️⚠️</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-info" th:if="${session.infoMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.infoMsg}]] 🤦‍♀️🤦‍♀️🤦‍♀️</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<!-- ALERT MESSAGE ENDS -->
+				
+				<h2 class="text-center fs-2 fw-bolder">Add Contact</h2>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<form th:action="@{/user/process-contact}" enctype="multipart/form-data" method="post" class="mt-2" id="myForm">
+							<!-- first name -->
+							<div class="input-group mb-2">
+								<label for="name" class="input-group-text me-3"><i class="fa fa-plus"></i></label>
+							  	<input type="text" class="form-control" placeholder="Enter Name here" id="name" name="name" autocomplete="off">
+							 </div>
+							<!-- second name -->
+							<div class="input-group mb-2">
+								<label for="secondName" class="input-group-text me-3"><i class="fa fa-user"></i></label>
+							  	<input type="text" class="form-control" placeholder="Enter Nick Name here" name="secondName" id="secondName" autocomplete="off">
+							 </div>
+							 <!-- phone number -->
+							 <div class="input-group mb-2">
+							 	<label for="phone" class="input-group-text me-3"><i class="fa fa-phone"></i></label>
+							 	<input type="number" maxlength="10" class="form-control" placeholder="Enter Phone Number here" name="phone" id="phone" autocomplete="off"/>
+							 </div>
+							 <!-- email -->
+							 <div class="input-group mb-2">
+							 	<label for="email" class="input-group-text me-3">@</label>
+							 	<input type="email" class="form-control" placeholder="Enter Email here" name="email" id="email" autocomplete="off" />
+							 </div>
+							 <!-- work -->
+							 <div class="input-group mb-2">
+							 	<label for="work" class="input-group-text me-3"><i class="fa fa-briefcase"></i></label>
+							 	<input type="text" class="form-control" placeholder="Enter Work here" name="work" id="work" autocomplete="off"/>
+							 </div>
+							 <!-- description -->
+							 <div class="form-group mb-2">
+							 	<textarea rows="8" cols="" id="description" class="form-control" placeholder="Enter contact description" name="description"></textarea>
+							 </div>
+							 <!-- file upload -->
+							 <div class="custom-file mb-2">
+							 	<input type="file" name="profileImage" id="profileImage"/>
+							 </div>
+							 <div class="form-group d-flex justify-content-center mb-2">
+							 	<input type="submit" value="Save Contact" class="btn btn-outline-primary"/>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#add-link").addClass("active");
+			});
+		</script>
+		<script src="/javascript/AddContact.js"></script>
+	</section>
+</body>
+</html>

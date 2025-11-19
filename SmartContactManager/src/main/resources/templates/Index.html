@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1 class="fw-bold">Welcome to Smart Contact Manager</h1>
+      <p>Manage your contacts easily, securely, and efficiently in one place.</p>
+      <a href="/signin" class="btn btn-warning text-dark fw-semibold">
+        <i class="fa-solid fa-arrow-right me-2"></i>Get Started
+      </a>
+    </div>
+  </section>
+
+	<section class="features" id="features">
+    <div class="container text-center">
+      <h2 class="fw-bold text-dark mb-5">Key Features</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-user-shield"></i>
+            <h5 class="fw-bold mt-3">Secure Registration</h5>
+            <p>Register and log in securely — your data is encrypted and stored safely in the database.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-address-card"></i>
+            <h5 class="fw-bold mt-3">Manage Contacts</h5>
+            <p>Add, edit, view, and delete contacts with an intuitive and responsive interface.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-star"></i>
+            <h5 class="fw-bold mt-3">Favorites</h5>
+            <p>Mark your important contacts as favorites for quick access whenever needed.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-user-gear"></i>
+            <h5 class="fw-bold mt-3">Profile Management</h5>
+            <p>Update your profile details, change passwords, and manage your account settings.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-database"></i>
+            <h5 class="fw-bold mt-3">Data Security</h5>
+            <p>All contact information is securely stored in a MySQL database using Spring Security.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h5 class="fw-bold mt-3">Modern Tech Stack</h5>
+            <p>Developed with Spring Boot, MVC, JPA, HTML, CSS, JavaScript, Bootstrap, and MySQL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

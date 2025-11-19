@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3">
+			<div class="card-head p-2 d-flex flex-column align-items-center">
+				<img th:src="@{'/uploads/users/'+${user.userImage}}" class="profile-photo img-fluid img-thumbnail" alt="" />
+				<h2 class="fw-bold fs-2 mt-1" th:text="${user.fullName}"></h2>
+			</div>
+			<div class="card-body">
+				<form th:action="@{/user/updateUserInformation}" method="post" enctype="multipart/form-data">
+					<table class="table table-borderless">
+						<tr>
+							<th>#ID</th>
+							<th>
+								<input type="text" th:value="${user.id}" name="id" class="form-control" autocomplete="off" disabled/>
+							</th>
+						</tr>
+						<tr>
+							<th>Full Name</th>
+							<td>
+								<input type="text" th:value="${user.fullName}" name="fullName" class="form-control" autocomplete="off" required/>
+							</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>
+								<input type="email" th:value="${user.email}" name="email" class="form-control" autocomplete="off" required/>
+							</td>
+						</tr>
+						<tr>
+							<th>Upload Image</th>
+							<td>
+								<input type="file" th:value="${user.userImage}" name="profileImage"  class="form-control" autocomplete="off"/>
+							</td>
+						</tr>
+						<tr>
+						 	<th>About You</th>
+						 	<td>
+								<textarea rows="4" cols="" th:text="${user.about}" placeholder="Enter something yourself" name="about" id="about" class="form-control" autocapitalize="off"></textarea>
+						 	</td>
+						</tr>
+						<tr class="text-center">
+							<td colspan="2">
+								<input type="submit" class="btn btn-outline-success" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

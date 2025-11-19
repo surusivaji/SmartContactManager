@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row d-flex justify-content-center align-items-center" style="height: 95vh">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-head p-2 d-flex flex-column align-items-center">
+							<img th:src="@{/images/loginlogo.png}" alt="" width="65px" height="70px"/>
+							<h3 class="text-center fs-2 fw-bold">Login Here !!</h3>
+						</div>
+						<div class="card-body">
+						
+							<!-- ALERT MESSAGE STARTS -->
+							<div class="alert alert-danger text-center" th:if="${param.error}">
+								Invalid Username And Password 😡😡😡
+							</div>
+							<div class="alert alert-warning text-center" th:if="${param.logout}">
+							 	You have been Logout 🥱🥱🥱
+							</div>
+							<div class="alert alert-warning text-center" th:if="${session.warningMsg}">
+							 	<span class="fs-6">[[${session.warningMsg}]] 😊😊😊</span>
+							 	<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+							</div>
+							<div class="alert alert-success text-center" th:if="${session.successMsg}">
+							 	<span class="fs-6">[[${session.successMsg}]] 😎😎😎</span>
+							 	<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+							</div>
+							<!-- ALERT MESSAGE ENDS -->
+							
+							<form th:action="@{/getUserInformation}" method="post">
+								<div class="from-group mb-3">
+									<label for="username">Your Username</label>
+									<input type="email" name="username" id="username" class="form-control" autocomplete="off" required="required"/>
+								</div>
+								<div class="form-group mb-3">
+  									<label for="password" class="form-label">Your Password</label>
+  									<div class="input-group">
+									  <input type="password" name="password" id="password" class="form-control" autocomplete="off" required>
+									  <button class="btn btn-secondary toggle-password" type="button" data-target="#password">
+									    <i class="fas fa-eye" id="toggleIcon"></i>
+									  </button>
+									</div>
+  									<div class="d-flex justify-content-end mt-1">
+    									<a th:href="@{/forgotPassword}" class="text-decoration-none">Forgot Password?</a>
+  									</div>
+								</div>
+								<div class="form-group mb-2 d-flex justify-content-center">
+									<input type="submit" value="Login" class="btn btn-fav form-control"/>
+								</div>
+								<div class="text-center">
+									<p>don't have any account? <a th:href="@{/register}">create one</a></p>
+								</div>
+							</form>
+						</diV>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

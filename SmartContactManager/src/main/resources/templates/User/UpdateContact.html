@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="card-head p-2">
+				<h2 class="text-center fs-2 fw-bolder">Update Your Contact</h2>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<form th:action="@{/user/update-process}" enctype="multipart/form-data" id="myForm" method="post" class="mt-2">
+							<!-- contact id -->
+							<input type="hidden" class="form-control" th:value="${contact.id}" id="name" name="id" autocomplete="off">
+							<!-- first name -->							
+							<div class="input-group mb-2">
+								<label for="name" class="input-group-text me-3"><i class="fa fa-plus"></i></label>
+							  	<input type="text" class="form-control" th:value="${contact.name}" placeholder="Enter Name here" id="name" name="name" autocomplete="off">
+							 </div>
+							<!-- second name -->
+							<div class="input-group mb-2">
+								<label for="secondName" class="input-group-text me-3"><i class="fa fa-user"></i></label>
+							  	<input type="text" class="form-control" th:value="${contact.secondName}" placeholder="Enter Nick Name here" name="secondName" id="secondName" autocomplete="off">
+							 </div>
+							 <!-- phone number -->
+							 <div class="input-group mb-2">
+							 	<label for="phone" class="input-group-text me-3"><i class="fa fa-phone"></i></label>
+							 	<input type="number" maxlength="10" th:value="${contact.phone}" class="form-control" placeholder="Enter Phone Number here" name="phone" id="phone" autocomplete="off"/>
+							 </div>
+							 <!-- email -->
+							 <div class="input-group mb-2">
+							 	<label for="email" class="input-group-text me-3">@</label>
+							 	<input type="email" class="form-control" th:value="${contact.email}" placeholder="Enter Email here" name="email" id="email" autocomplete="off"/>
+							 </div>
+							 <!-- work -->
+							 <div class="input-group mb-2">
+							 	<label for="work" class="input-group-text me-3"><i class="fa fa-briefcase"></i></label>
+							 	<input type="text" class="form-control" th:value="${contact.work}" placeholder="Enter Work here" name="work" id="work" autocomplete="off"/>
+							 </div>
+							 <!-- description -->
+							 <div class="form-group mb-2">
+							 	<textarea rows="8" cols="" class="form-control" th:text="${contact.description}" placeholder="Enter contact description" id="description" name="description">
+							 	</textarea>
+							 </div>
+							 <!-- file upload -->
+							 <div class="form-group text-center">
+							 	<img th:src="@{'/uploads/contacts/'+${contact.image}}" class="img-fluid img-thumbnail update-profile" height="150px" width="150px" alt="profilephoto" />
+							 </div>
+							 <div class="custom-file mb-2">
+							 	<p class="text-secondary">Choose new profile pic</p>
+							 	<input type="file" name="profileImage"/>
+							 </div>
+							 <div class="form-group d-flex justify-content-center mb-2">
+							 	<input type="submit" value="Save Contact" class="btn btn-outline-primary"/>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/javascript/AddContact.js"></script>
+	</section>
+</body>
+</html>

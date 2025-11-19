@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+<section class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-5 text-center bg-white">
+        <div class="mb-4">
+            <i class="bi bi-shield-lock-fill text-danger display-1 icon-bounce"></i>
+        </div>
+        <h2 class="fw-bold text-danger mb-3">403 - Access Forbidden</h2>
+        <p class="text-secondary mb-4">
+            You don’t have permission to access this account.<br>
+            Please login with valid credentials or contact support.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/" class="btn btn-primary btn-lg rounded-pill px-4">🏠 Home</a>
+            <a href="/signin" class="btn btn-outline-danger btn-lg rounded-pill px-4">🔑 Login</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

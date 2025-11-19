@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="container margin-class">
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-head d-flex flex-column align-items-center">
+							<img th:src="@{/images/registerlogo.png}" alt="" width="64px" height="67px"/>
+							<h3 class="text-center fs-2 fw-bold">Register Here !!</h3>
+						</div>
+						<div class="card-body">
+							
+							<!-- ALERT MESSAGE STARTS -->
+							<div class="alert alert-success" th:if="${session.successMsg}">
+								<p class="text-center fs-6">[[${session.successMsg}]] 🔥🔥🔥</p>
+								<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+							</div>
+							<div class="alert alert-info" th:if="${session.infoMsg}">
+								<p class="text-center fs-6">[[${session.infoMsg}]] 🤦‍♀️🤦‍♀️🤦‍♀️</p>
+								<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+							</div>
+							<div class="alert alert-warning" th:if="${session.warningMsg}">
+								<p class="text-center fs-6">[[${session.warningMsg}]] ⚠️⚠️⚠️</p>
+								<th:block th:text="${@helper.removeSessionMssage()}"></th:block>
+							</div>
+							<div class="alert alert-danger" th:if="${session.failMsg}">
+								<p class="text-center fs-6">[[${session.failMsg}]] 😡😡😡</p>
+								<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+							</div>
+							<!-- ALERT MESSAGE ENDS -->
+							
+							<form th:action="@{/saveUserInformation}" method="post" id="myForm" enctype="multipart/form-data">
+								<div class="from-group mb-3">
+									<label for="fullName">Your Name</label>
+									<input type="text" placeholder="Enter here" name="fullName" id="fullName" class="form-control" autocomplete="off"/>
+								</div>
+								<div class="from-group mb-3">
+									<label for="email">Your Email</label>
+									<input type="email" placeholder="Enter here" name="email" id="email" class="form-control" autocomplete="off"/>
+								</div>
+								<div class="from-group mb-3">
+									<label for="password">Your Password</label>
+									<div class="input-group">
+									  <input type="password" name="password" id="password" class="form-control" autocomplete="off">
+									  <button class="btn btn-secondary toggle-password" type="button" data-target="#password">
+									    <i class="fas fa-eye" id="toggleIcon"></i>
+									  </button>
+									</div>
+								</div>
+								<div class="from-group mb-3">
+									<label for="profileImage">Upload Image</label>
+									<input type="file" accept=".png, .jpg, .jpeg" name="profileImage" id="profileImage" class="form-control" autocomplete="off"/>
+								</div>
+								<div class="form-group mb-2">
+									<textarea rows="5" cols="" placeholder="Enter something yourself" name="about" id="about" class="form-control" autocapitalize="off"></textarea>
+								</div>
+								<div class="form-group d-flex justify-content-center">
+									<input type="submit" value="Submit" class="btn btn-fav me-2"/>
+									<input type="reset" value="Reset" class="btn btn-warning"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/javascript/Register.js"></script>
+	</section>
+</body>
+</html>

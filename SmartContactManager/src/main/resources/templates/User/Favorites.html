@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace=~{/User/Base::layout(~{::section})}>
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="card-head">
+					<!-- ALERT MESSAGE STARTS -->
+					<div class="alert alert-danger text-center" th:if="${session.successMsg}" role="alert">
+						<p class="text-center fs-6">[[${session.successMsg}]] 🔥🔥🔥</p>
+						<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+					</div>
+					<div class="alert alert-danger" th:if="${session.failMsg}" role="alert">
+						<p class="text-center fs-6">[[${session.failMsg}]] 😡😡😡</p>
+						<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+					</div>
+					<!-- ALERT MESSAGE ENDS -->
+				<h2 class="fs-2 fw-bold text-center">Favorites</h2>
+			</div>
+			<div class="card-body table-responsive">
+				<table class="table table-hover">
+					<tr class="table-info">
+						<th>Profile</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>Action</th>
+					</tr>
+					<tr th:if="${favorites.size()==0}">
+						<td colspan="5" class="text-center fw-bold fs-5 p-2 text-uppercase text-warning">Favorites are not present ⚠️⚠️⚠️</td>
+					</tr>
+					<tr th:each="favorite : ${favorites}">
+						<td>
+							<img th:src="@{'/uploads/contacts/'+${favorite.contact.image}}" class="favorite-profile-photo img-thumbnail" alt="" />
+						</td>
+						<td th:text="${favorite.contact.name}"></td>
+						<td th:text="${favorite.contact.email}"></td>
+						<td th:text="${favorite.contact.phone}"></td>
+						<td>
+							<a th:href="@{/user/viewContact/{id}(id=${favorite.contact.id})}" class="btn favorite-view-btn btn-sm"><i class="fa-solid fa-eye"></i> View</a>
+							<a th:onclick="'deleteFavorite('+${favorite.id}+')'" class="btn favorite-remove-btn btn-sm"><i class="fa-solid fa-trash-can"></i> Remove</a>
+						</td>
+					</tr>
+				</table>
+				<nav aria-label="Page navigation example" th:if="${favorites.size()!=0}">
+				  <ul class="pagination">
+				    <li class="page-item" th:if="${currentPage!=0}">
+				      <a class="page-link" th:href="@{'/user/favorites?pageNo='+${currentPage-1}}" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="page-item" th:each="page : ${#numbers.sequence(1, totalPages)}" th:classappend="${currentPage==page-1 ? 'pagination-active' : ''}">
+				    	<a class="page-link" th:href="@{'/user/favorites?pageNo='+${page-1}}" th:text="${page}"></a>
+				    </li>
+				    <li class="page-item" th:if="${currentPage+1!=totalPages}">
+				      <a class="page-link" th:href="@{'/user/favorites?pageNo='+${currentPage+1}}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+		</div>
+	<script>
+		$(document).ready(()=>{
+			$(".item").removeClass("active");
+			$("#favorite-link").addClass("active");
+		});
+	</script>
+	</section>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="card-head px-2 pt-2">
+				<!-- ALERT MESSAGE STARTS -->
+				<div class="alert alert-success text-center" th:if="${session.successMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.successMsg}]] 🔥🔥🔥</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-danger" th:if="${session.failMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.failMsg}]] 😡😡😡</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-warning" th:if="${session.warningMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.warningMsg}]] ⚠️⚠️⚠️</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<!-- ALERT MESSAGE ENDS -->
+				<h2 class="fs-2 fw-bold text-center">Your Contacts</h2>
+				<div class="search-container mt-3 mx-2">
+					<input onkeyup="search()" id="search-input" type="text" class="form-control" placeholder="Enter name here"/>
+					<div class="search-result">
+						<!-- result goes here -->
+					</div>
+				</div>
+			</div>
+			<div class="card-body table-responsive">
+				<table class="table table-hover">
+					<tr class="table-light">
+						<th>#ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>Action</th>
+					</tr>
+					<tr th:if="${contacts.size()==0}">
+						<td colspan="5" class="text-center fs-5 fw-bold text-warning text-uppercase p-2">Contacts are not present ⚠️⚠️⚠️</td>
+					</tr>
+					<tr th:each="contact: ${contacts}">
+						<th th:text="${'SCMUSER'+contact.id}"></th>
+						<td><img class="contact-profile-photo" th:src="@{'/uploads/contacts/'+${contact.image}}" alt="" /><span th:text="${contact.name}"></span></td>
+						<td><a th:href="@{/user/viewContact/{id}(id=${contact.id})}" th:text="${contact.email}"></a></td>
+						<td th:text="${contact.phone}"></td>
+						<td>
+							<a th:href="@{/user/updateContact/{id}(id=${contact.id})}" class="btn update-btn btn-sm"> <i class="fa-solid fa-pen-to-square"></i> Update</a>
+							<button th:onclick="'deleteContact(' + ${contact.id} + ')'" type="button" class="btn delete-btn btn-sm"> <i class="fa-solid fa-trash-can"></i> Delete</button>
+							<a th:href="@{'/user/addToFavorites?userId='+${contact.user.id}+'&contactId='+${contact.id}}" class="btn favorite-btn btn-sm"> <i class="fa-solid fa-star"></i> Add To Favorites</a>
+						</td>
+					</tr>
+				</table>
+				<nav aria-label="Page navigation example" th:if="${contacts.size()!=0}">
+				  <ul class="pagination"> 
+				    <li class="page-item" th:if="${currentPage!=0}">
+				      <a class="page-link" th:href="@{'/user/viewContacts?pageNo='+${currentPage-1}}" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="page-item" th:each="page : ${#numbers.sequence(1, totalPages)}" th:classappend="${currentPage==page-1 ? 'pagination-active' : ''}">
+				    	<a class="page-link" th:href="@{'/user/viewContacts?pageNo='+${page-1}}" th:text="${page}"></a>
+				    </li>
+				    <li class="page-item" th:if="${currentPage+1!=totalPages}">
+				      <a class="page-link" th:href="@{'/user/viewContacts?pageNo='+${currentPage+1}}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+		</div>
+		<script>
+			$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#contacts-link").addClass("active");
+			});
+		</script>
+	</section>
+</body>
+</html>

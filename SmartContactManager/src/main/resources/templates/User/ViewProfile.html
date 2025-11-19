@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card ms-3 me-3">
+			<div class="card-head p-2 d-flex flex-column align-items-center">
+				<img th:src="@{'/uploads/users/'+${user.userImage}}" class="profile-photo img-fluid img-thumbnail" alt="" />
+				<h2 class="fw-bold fs-2 mt-1" th:text="${user.fullName}"></h2>
+			</div>
+			<div class="card-body">
+				<table class="table text-center">
+					<tr>
+						<th>#ID</th>
+						<th>SCMUSER<span th:text="${user.id}"></span></th>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td th:text="${user.email}"></td>
+					</tr>
+					<tr>
+						<th>Role</th>
+						<td th:text="${user.role}"></td>
+					</tr>
+					<tr>
+						<th>Account Activate</th>
+						<td th:text="${user.enabled}"></td>
+					</tr>
+					<tr>
+					 	<th>About You</th>
+					 	<td th:text="${user.about}"></td>
+					</tr>
+				</table>
+				<div class="form-group">
+					<a th:href="@{/user/updateProfile}" class="btn btn-success form-control update-account-btn">Update Acccount</a>
+					<a th:href="@{/user/deleteAccount}" class="btn btn-danger form-control my-2 delete-account-btn">Delete Acccount</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#profile-link").addClass("active");
+			});
+		</script>
+	</section>
+</body>
+</html>

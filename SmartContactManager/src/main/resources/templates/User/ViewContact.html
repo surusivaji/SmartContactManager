@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+		<section>
+		<div class="card me-3 ms-3" th:if="${contact!=null}">
+				<!-- ALERT MESSAGE STARTS -->
+				<div class="alert alert-success text-center" th:if="${session.successMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.successMsg}]] 🔥🔥🔥</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-danger" th:if="${session.failMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.failMsg}]] 😡😡😡</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<div class="alert alert-warning" th:if="${session.warningMsg}" role="alert">
+					<p class="text-center fs-6">[[${session.warningMsg}]] ⚠️⚠️⚠️</p>
+					<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+				</div>
+				<!-- ALERT MESSAGE ENDS -->
+			<div class="card-head p-2 d-flex align-items-center flex-column">
+				<img th:src="@{'/uploads/contacts/'+${contact.image}}" class="contact-profile img-fluid img-thumbnail" alt="" />
+				<h3 class="fs-3 fw-bold"><span th:text="${contact.name}"></span> (<span th:text="${contact.secondName}"></span>)</h3>
+			</div>
+			<div class="card-body">
+				<table class="table text-center">
+					<tr>
+						<th>#ID</th>
+						<th th:text="${'SCMUSER'+contact.id}"></th>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td th:text="${contact.email}"></td>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<td th:text="${contact.phone}"></td>
+					</tr>
+					<tr>
+						<th>Work</th>
+						<td th:text="${contact.work}"></td>
+					</tr>
+				</table>
+				<div class="text-center">
+					<p th:text="${contact.description}"></p>
+				</div>
+				<div class="form-group">
+					<a th:href="@{/user/updateContact/{id}(id=${contact.id})}" class="btn update-account-btn form-control mt-2">Update</a>
+					<button th:onclick="'deleteContact(' + ${contact.id} + ')'" type="button" class="btn delete-account-btn form-control mt-2">Delete</button>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-info" th:if="${contactInfo!=null}">
+			<h1 class="text-center fw-bold" th:text="${contactInfo}"></h1>
+		</div>
+	</section>
+</body>
+</html>

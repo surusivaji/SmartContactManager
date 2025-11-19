@@ -1,0 +1,282 @@
+body {
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.bg-fav {
+	background: #9112BC !important;
+}
+
+.btn-fav {
+	background: #9112BC !important;
+	color: #fff !important;
+	border: none;
+}
+
+.hero {
+	background: linear-gradient(135deg, rgba(0, 128, 255, 0.7),
+		rgba(255, 0, 150, 0.6), rgba(255, 255, 0, 0.6), rgba(0, 255, 200, 0.6)),
+		url('https://images.unsplash.com/photo-1581091012184-5c8af53d5b84')
+		center/cover no-repeat;
+	height: 100vh;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	animation: gradientShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift { 
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.hero h1 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+.hero p {
+	font-size: 1.2rem;
+	margin-top: 10px;
+}
+
+.hero .btn {
+	margin-top: 25px;
+	padding: 12px 35px;
+	border-radius: 30px;
+	font-weight: 500;
+}
+
+.features {
+	background-color: #f8f9fa;
+	padding: 65px 0;
+}
+
+.feature-card {
+	background-color: #fff;
+	border-radius: 15px;
+	padding: 40px 25px;
+	transition: 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+	font-size: 2.8rem;
+	color: #9112BC;
+	margin-bottom: 15px;
+}
+
+.margin-class {
+	margin-top: 58px !important;
+}
+
+/* side bar */
+@media only screen and (max-width:600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		background: white;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 999;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar a:hover {
+	background: #F5F5F5;
+}
+
+.sidebar .divider {
+	height: 0.5px;
+	width: 100%;
+	background: #F5F5F5;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.profile-photo {
+	height: 230px;
+	width: 230px;
+	border-radius: 50%;
+}
+
+.active {
+	background: #9112BC !important;
+	color: #fff !important;
+}
+
+.contact-profile-photo {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* search functionality */
+.search-container {
+	position: relative;
+}
+
+.search-result {
+	position: absolute;
+	background: white;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid gray;
+	display: none;
+}
+
+.pagination-active a {
+	background: #9112BC !important;
+	color: #fff !important;
+}
+
+.update-profile {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+}
+
+.profile-photo {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
+
+
+.contact-profile {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+
+.alert-info {
+	background: #F93827 !important;
+	color: white !important;
+}
+
+.delete-btn {
+	background: #FF0000 !important;
+	color: #fff !important;
+	border: none;
+	transition: 3s all;
+}
+
+.delete-btn:hover {
+	background: #DD0303 !important;
+}
+
+.update-btn {
+	background: #059212 !important;
+	color: #fff !important;
+	border: none;
+	transition: 3s ease-in-out all;
+}
+
+.update-btn:hover {
+	background: #16610E !important;
+}
+
+.update-account-btn {
+	background: #059212 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.delete-account-btn {
+	background: #FF0000 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.favorite-btn {
+	background: #5459AC !important;
+	color: #fff !important;
+	border: none;
+}
+
+.favorite-btn:hover {
+	background: #483AA0 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.favorite-profile-photo {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.favorite-remove-btn {
+	background: #FF0000 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.favorite-view-btn {
+	background: #074799 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.alert-confirm {
+	background: #059212 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.alert-cancel {
+	background: #FF0000 !important;
+	color: #fff !important;
+	border: none;
+}

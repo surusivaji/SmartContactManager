@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{User/Base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Smart Contact Manager</title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="alert alert-success text-center" th:if="${session.successMsg}" role="alert">
+				<p class="text-center fs-6">[[${session.successMsg}]] 🔥🔥🔥</p>
+				<th:block th:text="${@helper.removeSessionMessage()}"></th:block>
+			</div>
+			<div class="card-body">
+				<div class="container text-center p-2">
+					<img th:src="@{'/uploads/users/'+${user.userImage}}" class="profile-photo img-thumbnail img-fluid" alt="profile" />
+				</div>
+				<div class="mt-3">
+					<h1 class="text-center text-secondary fw fst-italic">Start Adding your contact on cloud...</h1>
+					<a th:href="@{/user/addContact}" class="btn btn-fav form-control mt-4 text-uppercase">Add New Contact</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(()=>{
+				$(".item").removeClass("active");
+				$("#home-link").addClass("active");
+			});
+		</script>
+	</section>>
+</body>
+</html>
