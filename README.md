@@ -1,4 +1,4 @@
-<h1 align="center">✨ SMART CONTACT MANAGER ✨</h1> 
+<h1 align="center">📇 Smart Contact Manager 📇</h1> 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
