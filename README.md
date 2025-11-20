@@ -162,6 +162,7 @@ smart-contact-manager/
 Make sure you have installed:
 
 * JDK 8 or above
+* Spring Tool Suite
 * MySQL Server
 * Maven
 
