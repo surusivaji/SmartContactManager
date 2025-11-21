@@ -220,60 +220,37 @@ http://localhost:8000
 
 <hr>
 
-## 📸 Screenshots
+ <h2>📸 Screenshots </h2>
 
-### 1. Index
-
-![Index](index.png)
-
-### 2. Registration
-
-![Register](register.png)
-
-### 3. Login
-
-![Login](login.png)
-
-### 4. About
-
-![About](about.png)
-
-### 5. User Home
-
-![Home](userhome.png)
-
-### 6. Add Contact
-
-![Add Contact](addcontact.png)
-
-### 7. View Contact
-
-![Show Contact](showcontact.png)
-
-### 8. All Contacts
-
-![All Contacts](viewcontacts.png)
-
-### 9. Edit Contact
-
-![Update Contact](updatecontact.png)
-
-### 10. Delete Contact
-
-![Delete Contact](deletecontact.png)
-
-### 11. Profile
-
-![Profile](viewprofile.png)
-
-### 12. Settings
-
-![Settings](settings.png)
-
-### 13. Logout
-
-![Logout](logout.png)
-
+<div>
+  <h4>1. Index Page</h4>
+  <img src="Index.png" alt="Index Page" width="80%">
+  <h4>2. Registration Page</h4>
+  <img src="Registeration.png" alt="User Registration Page" width="80%">
+   <h4>3. Login Page</h4>
+  <img src="Login.png" alt="User Login Page" width="80%">
+   <h4>4. Forgot Password Page</h4>
+  <img src="ForgotPassword.png" alt="Forgot Password Page" Page" width="80%">
+   <h4>5. OTP Page</h4>
+  <img src="OTP.png" alt="otp page" Page" width="80%">
+   <h4>5. Reset Password Page</h4>
+  <img src="changepassword.png" alt="Reset Password Page" width="80%">
+   <h4>6. Home Page</h4>
+  <img src="userhome.png" alt="Home Page" width="80%">
+  <h4>7. Products Page</h4>
+  <img src="products.png" alt="products Page" width="80%">
+   <h4>8. View Product Page</h4>
+   <img src="viewproduct.png" alt="view product Page" width="80%">
+   <h4>9. View Cart Page</h4>
+   <img src="viewcart.png" alt="view cart Page" width="80%">
+   <h4>10. Address Page</h4>
+   <img src="address.png" alt="Address Page" width="80%">
+   <h4>11. Order Success Page</h4>
+   <img src="ordersuccess.png" alt="order success" width="80%">
+   <h4>12. My Orders Page</h4>
+   <img src="myorders.png" alt="Orders Page" width="80%">
+   <h4>13. Update Profile Page</h4>
+   <img src="updateprofile.png" alt="Update Profile Page" width="80%">
 <hr>
 
 
