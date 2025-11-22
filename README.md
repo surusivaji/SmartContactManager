@@ -1,4 +1,4 @@
-<h1 align="center">📇 Smart Contact Manager 📇</h1> 
+<h1 align="center">📱 Smart Contact Manager</h1> 
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
@@ -15,7 +15,18 @@
 </p>
 <hr>
 
-<h2> 📜 Purpose</h2>
+<h2>🚀 Overview</h2>
+<p>
+  Smart Contact Manager is a secure and user-friendly web application built using Spring Boot.
+  It helps users store, organize, and manage contacts efficiently — all inside one centralized, secure platform.
+</p>
+<p>✔ Suitable for personal, professional, or business users</p>
+<p>✔ Complete contact lifecycle: Add → View → Update → Delete</p>
+<p>✔ Secured with Spring Security + encrypted passwords</p>
+<p>✔ Fast, responsive UI using Bootstrap + Thymeleaf</p>
+<hr>
+
+<h2>🎯 Project Purpose</h2>
 <p>
   The purpose of the Smart Contact Manager application is to help users store, manage, and organize their contacts securely in one place. Instead of saving contacts in phones, books, or scattered places, this
   application provides a safe, easy-to-use platform where users can:
@@ -146,7 +157,7 @@ smart-contact-manager/
   <li><strong>Forgot Password:</strong> Users can reset the password using an OTP sent to their registered email.</li>
 </ul>
 
-<h3>📂 Contact Management</h3>
+<h3>📚 Contact Management</h3>
 <ul>
   <li><strong>Add Contact:</strong> Users can add new contact details.</li>
   <li><strong>View Contacts:</strong> Shows all contacts for the logged-in user.</li>
@@ -223,34 +234,48 @@ http://localhost:8000
  <h2>📸 Screenshots </h2>
 
 <div>
-  <h4>1. Index Page</h4>
+  <h4>1. Index</h4>
   <img src="Index.png" alt="Index Page" width="80%">
-  <h4>2. Registration Page</h4>
+  <h4>2. About</h4>
+  <img src="About.png" alt="About Page" width="80%">
+  <h4>3. Registration</h4>
   <img src="Registeration.png" alt="User Registration Page" width="80%">
-   <h4>3. Login Page</h4>
+   <h4>4. Login</h4>
   <img src="Login.png" alt="User Login Page" width="80%">
-   <h4>4. Forgot Password Page</h4>
+   <h4>5. Forgot Password</h4>
   <img src="ForgotPassword.png" alt="Forgot Password Page" Page" width="80%">
-   <h4>5. OTP Page</h4>
+   <h4>6. OTP</h4>
   <img src="OTP.png" alt="otp page" Page" width="80%">
-   <h4>5. Reset Password Page</h4>
-  <img src="changepassword.png" alt="Reset Password Page" width="80%">
-   <h4>6. Home Page</h4>
-  <img src="userhome.png" alt="Home Page" width="80%">
-  <h4>7. Products Page</h4>
-  <img src="products.png" alt="products Page" width="80%">
-   <h4>8. View Product Page</h4>
-   <img src="viewproduct.png" alt="view product Page" width="80%">
-   <h4>9. View Cart Page</h4>
-   <img src="viewcart.png" alt="view cart Page" width="80%">
-   <h4>10. Address Page</h4>
-   <img src="address.png" alt="Address Page" width="80%">
-   <h4>11. Order Success Page</h4>
-   <img src="ordersuccess.png" alt="order success" width="80%">
-   <h4>12. My Orders Page</h4>
-   <img src="myorders.png" alt="Orders Page" width="80%">
-   <h4>13. Update Profile Page</h4>
-   <img src="updateprofile.png" alt="Update Profile Page" width="80%">
+   <h4>7. Reset Password</h4>
+  <img src="ResetPassword.png" alt="Reset Password Page" width="80%">
+   <h4>8. Home</h4>
+  <img src="Home.png" alt="Home Page" width="80%">
+  <h4>9. Add Contact</h4>
+  <img src="AddContact.png" alt="Add Contact Page" width="80%">
+   <h4>10. View Contacts</h4>
+   <img src="Contacts.png" alt="View Contact" width="80%">
+   <h4>11. View Contact</h4>
+   <img src="ViewContact.png" alt="view contact" width="80%">
+   <h4>12. Update Contact</h4>
+   <img src="UpdateContact.png" alt="Update Contact" width="80%">
+   <h4>13. Delete Contact</h4>
+   <img src="DeleteContact.png" alt="Delete Contact" width="80%">
+   <h4>14. Add to Favorite</h4>
+   <img src="AddFavorite.png" alt="Add Favorite" width="80%">
+   <h4>15. Favorites</h4>
+   <img src="Favorites.png" alt="Favorites" width="80%">
+   <h4>16. Remove Favorite</h4>
+   <img src="RemoveFavorite.png" alt="Remove Favorite Page" width="80%">
+   <h4>17. Profile</h4>
+   <img src="Profile.png" alt="Profile Page" width="80%">
+   <h4>18. Update Profile</h4>
+   <img src="UpdateProfile.png" alt="Update Profile Page" width="80%">
+   <h4>19. Change Password</h4>
+   <img src="ChangePassword.png" alt="Change Password" width="80%">
+    <h4>20. Delete Account</h4>
+    <img src="DeleteAccount.png" alt="Delete Account" width="80%">
+    <h4>21. Logout</h4>
+    <img src="Logout.png" alt="Logout" width="80%">
 <hr>
 
 
